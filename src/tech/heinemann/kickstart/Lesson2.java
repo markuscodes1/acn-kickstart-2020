@@ -1,5 +1,6 @@
 package tech.heinemann.kickstart;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Lesson2 {
@@ -12,12 +13,16 @@ public class Lesson2 {
 
 
         System.out.println("Bitte gib dein Alter an:");
-        int age = scanner.nextInt();
 
+        try {
+            int age = scanner.nextInt();
+
+            System.out.println("Hallo, " + name);
+            System.out.println("Du bist " + age + " Jahre alt.");
+        } catch (InputMismatchException exception) {
+            System.out.println("Das Alter muss eine Zahl sein");
+        }
 
         scanner.close();
-
-        System.out.println("Hallo, " + name);
-        System.out.println("Du bist " + age + " Jahre alt.");
     }
 }
